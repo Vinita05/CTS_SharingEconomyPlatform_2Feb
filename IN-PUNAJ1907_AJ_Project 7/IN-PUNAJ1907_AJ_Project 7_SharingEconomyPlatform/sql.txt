@@ -1,0 +1,109 @@
+create table product_details
+(
+		
+
+product_id  number(10) primary key,
+		
+type1 varchar2(20) NOT NULL,
+                
+type2 varchar2(50) NOT NULL,
+		
+length number(10) NOT NULL,
+		
+breadth number(10) NOT NULL,
+		
+height number(10) NOT NULL,
+                
+color varchar2(50) NOT NULL,
+                
+material varchar2(5) NOT NULL,
+               	
+brand VARCHAR2(20),
+		
+price Number(15) NOT NULL,
+		
+description varchar2(200) NOT NULL,
+		
+vendor_userid number(10) REFERENCES vendor_info1(vendor_userid)
+
+
+
+)
+
+create table vendor_details
+(
+                
+FirstName varchar2(50) NOT NULL,
+                
+astName varchar2(50) NOT NULL,
+                
+Age Number(2) NOT NULL,
+                
+Gender varchar2(5) NOT NULL,
+                
+ContactNumber Number(10) NOT NULL,
+               	
+Vendor_id NUMBER(10) primary key,
+               	
+Address VARCHAR2 (200),
+		
+City varchar2(50) NOT NULL,
+		
+Zip_Code varchar2(10) NOT NULL,
+		
+Landline varchar2(10) NOT NULL,
+		
+Email varchar2(50) NOT NULL,
+		
+Other_Contact_info varchar2(100) NOT NULL,
+		
+vendor_userid varchar2(15) REFERENCES vendor_info1(vendor_userid)
+
+
+)
+
+
+create table vendor_info1
+(
+	
+	   
+                
+Vendor_UserId varchar2(15)Primary key,
+                
+Password varchar2(15) NOT NULL
+	
+
+)
+
+
+
+create table user_info
+(
+ 
+fname varchar2(50)not null,
+ 
+lname varchar2(50)not null,
+ 
+age number(2)not null,
+ 
+gender varchar2(10),
+ 
+contact_no number(10),
+ 
+user_id varchar2(15)primary key,
+ 
+password varchar2(15)not null
+
+
+)
+
+
+Create table Category_Master
+(
+
+Category_name varchar2(20) Unique not null,
+
+Category_id number(15) not null Primary key,
+
+Type varchar2(10) not null
+)
